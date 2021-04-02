@@ -1,0 +1,30 @@
+{
+  "fullname": "Benjamin Edward Oliver",
+  "employment": [
+    { "company": "Iterate AS", "role": "Solution Engineer", "from": "2019" },
+    {
+      "company": "Ardoq AS",
+      "role": "Software Engineer",
+      "from": "2016",
+      "to": "2019"
+    },
+    {
+      "company": "Finansavisen",
+      "role": "Designer",
+      "from": "2013",
+      "to": "2016"
+    },
+    {
+      "company": "Lazarides",
+      "role": "Head of Design",
+      "from": "2007",
+      "to": "2009"
+    }
+  ],
+  "education": [
+    { "title": "MSc", "year": "2019", "uni": "University of Oslo" },
+    { "title": "BSc", "year": "2017", "uni": "University of Oslo" },
+    { "title": "MA", "year": "2011", "uni": "Royal College of Art" },
+    { "title": "BA", "year": "2007", "uni": "Central Saint Martins" }
+  ]
+}
