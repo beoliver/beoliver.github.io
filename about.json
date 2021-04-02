@@ -1,5 +1,7 @@
 {
   "fullname": "Benjamin Edward Oliver",
+  "considers_self": "Designer/Developer",
+  "location": { "current": "Oslo" },
   "employment": [
     { "company": "Iterate AS", "role": "Solution Engineer", "from": "2019" },
     {
