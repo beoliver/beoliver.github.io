@@ -1,1 +1,33 @@
-beoliver
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>beoliver</title>
+        <meta name="description" content="Commerical & Research Projects by Benjamin E. Oliver">
+        <meta name="author" content="Benjamin E. Oliver">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/styles.css?v=1.0">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="about">
+                <pre>(async () => {
+  const about = await fetch(
+    "https://beoliver.github.io/about.json"
+  ).then((res) => res.json());
+                  
+  console.log(
+    `
+    Hello 👋. My name is ${about.fullname}.
+    I am a ${about.considers_self}  
+    living in ${about.location.current}.
+    I currently work at ${about.employment[0].company} 
+    as a ${about.employment[0].role}.
+    `
+  );
+})();</pre>
+            </div>
+        </div>
+    </body>
+</html>
