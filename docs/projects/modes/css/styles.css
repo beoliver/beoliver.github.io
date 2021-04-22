@@ -1,0 +1,65 @@
+#container {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+body {
+  background: #323232;
+}
+
+p {
+  color: #dadada;
+}
+
+#currentMode {
+  color: #dadada;
+}
+
+#innerDiskContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+#innerDisk {
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+
+#outerDiskContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+#outerDisk {
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+
+#coverContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  z-index: 3;
+}
+
+#cover {
+  filter: drop-shadow(2px 4px 6px black);
+}
