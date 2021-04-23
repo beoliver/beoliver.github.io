@@ -1,7 +1,17 @@
-var r1 = 0;
-var r2 = 0;
-
-const notes = ["F", "C", "G", "D", "A", "E", "B", "F#", "C#", "G#", "D#", "A#"];
+const circle_of_fifths = [
+  "F",
+  "C",
+  "G",
+  "D",
+  "A",
+  "E",
+  "B",
+  "F#",
+  "C#",
+  "G#",
+  "D#",
+  "A#",
+];
 const modes = [
   "Lydian",
   "Ionian (Major)",
@@ -12,44 +22,52 @@ const modes = [
   "Locrian",
 ];
 
-var note_index = 0;
-var mode_index = 0;
+const state = {
+  outer_disk_rotation: 0,
+  inner_disk_rotation: 0,
+  note_index: 0,
+  mode_index: 0,
+};
 
 function mode() {
-  return `${notes[(note_index + mode_index) % notes.length]}-${
-    modes[mode_index]
-  }`;
+  return `${
+    circle_of_fifths[
+      (state.note_index + state.mode_index) % circle_of_fifths.length
+    ]
+  }-${modes[state.mode_index]}`;
 }
 
 function rotateOuterLeft() {
   const disk = document.getElementById("outerDisk");
-  r1 = r1 - 30;
-  note_index = (note_index + 1) % notes.length;
-  disk.style["transform"] = `rotate(${r1}deg)`;
+  state.outer_disk_rotation = state.outer_disk_rotation - 30;
+  state.note_index = (state.note_index + 1) % circle_of_fifths.length;
+  disk.style["transform"] = `rotate(${state.outer_disk_rotation}deg)`;
 }
 
 function rotateOuterRight() {
   const disk = document.getElementById("outerDisk");
-  r1 = r1 + 30;
-  note_index = (notes.length + (note_index - 1)) % notes.length;
-  disk.style["transform"] = `rotate(${r1}deg)`;
+  state.outer_disk_rotation = state.outer_disk_rotation + 30;
+  state.note_index =
+    (circle_of_fifths.length + (state.note_index - 1)) %
+    circle_of_fifths.length;
+  disk.style["transform"] = `rotate(${state.outer_disk_rotation}deg)`;
 }
 
 function rotateInnerLeft() {
-  if (mode_index > 0) {
+  if (state.mode_index > 0) {
     const disk = document.getElementById("innerDisk");
-    r2 = r2 - 30;
-    mode_index = (mode_index - 1) % modes.length;
-    disk.style["transform"] = `rotate(${r2}deg)`;
+    state.inner_disk_rotation = state.inner_disk_rotation - 30;
+    state.mode_index = (state.mode_index - 1) % modes.length;
+    disk.style["transform"] = `rotate(${state.inner_disk_rotation}deg)`;
   }
 }
 
 function rotateInnerRight() {
-  if (mode_index < modes.length - 1) {
+  if (state.mode_index < modes.length - 1) {
     const disk = document.getElementById("innerDisk");
-    r2 = r2 + 30;
-    mode_index = (mode_index + 1) % modes.length;
-    disk.style["transform"] = `rotate(${r2}deg)`;
+    state.inner_disk_rotation = state.inner_disk_rotation + 30;
+    state.mode_index = (state.mode_index + 1) % modes.length;
+    disk.style["transform"] = `rotate(${state.inner_disk_rotation}deg)`;
   }
 }
 

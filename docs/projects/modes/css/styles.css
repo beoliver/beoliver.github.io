@@ -13,6 +13,7 @@ p {
 
 #currentMode {
   color: #dadada;
+  font-size: 2em;
 }
 
 #innerDiskContainer {
