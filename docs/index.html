@@ -17,17 +17,21 @@
   const about = await fetch(
     "https://www.beoliver.com/about.json"
   ).then((res) => res.json());
-                  
-  console.log(
-    `
+  const vowels = ["a","e","i","o","u"]
+  const aOrAn = (word) =>
+    `${vowels.includes(word[0]) ? "an" : "a"} ${word}`
+
+  const employment = about.employment[0]
+  const role = aOrAn(employment.role)
+  const considers_self = aOrAn(about.considers_self)
+
+  console.log(`
     Hello 👋. My name is ${about.fullname}.
-    I am a ${about.considers_self}  
+    I am ${considers_self}
     living in ${about.location.current}.
-    I currently work at ${about.employment[0].company} 
-    as a ${about.employment[0].role}.
-    `
-  );
-})();</pre>
+    I currently work at ${employment.company}
+    as ${role}.`
+  )})();</pre>
             </div>
         </div>
     </body>
