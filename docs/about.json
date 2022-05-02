@@ -1,9 +1,21 @@
 {
   "fullname": "Benjamin Edward Oliver",
   "considers_self": "Designer/Developer",
-  "location": { "current": "Oslo" },
+  "location": {
+    "current": "Oslo"
+  },
   "employment": [
-    { "company": "Iterate AS", "role": "Solution Engineer", "from": "2019" },
+    {
+      "company": "Ardoq AS",
+      "role": "Software Engineer",
+      "from": "2021"
+    },
+    {
+      "company": "Iterate AS",
+      "role": "Solution Engineer",
+      "from": "2019",
+      "to": "2021"
+    },
     {
       "company": "Ardoq AS",
       "role": "Software Engineer",
@@ -24,9 +36,25 @@
     }
   ],
   "education": [
-    { "title": "MSc", "year": "2019", "uni": "University of Oslo" },
-    { "title": "BSc", "year": "2017", "uni": "University of Oslo" },
-    { "title": "MA", "year": "2011", "uni": "Royal College of Art" },
-    { "title": "BA", "year": "2007", "uni": "Central Saint Martins" }
+    {
+      "title": "MSc",
+      "year": "2019",
+      "uni": "University of Oslo"
+    },
+    {
+      "title": "BSc",
+      "year": "2017",
+      "uni": "University of Oslo"
+    },
+    {
+      "title": "MA",
+      "year": "2011",
+      "uni": "Royal College of Art"
+    },
+    {
+      "title": "BA",
+      "year": "2007",
+      "uni": "Central Saint Martins"
+    }
   ]
 }
