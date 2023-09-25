@@ -7,8 +7,14 @@
   "employment": [
     {
       "company": "Ardoq AS",
+      "role": "Senior Software Engineer",
+      "from": "2023"
+    },
+    {
+      "company": "Ardoq AS",
       "role": "Software Engineer",
-      "from": "2021"
+      "from": "2021",
+      "to": "2023"
     },
     {
       "company": "Iterate AS",
