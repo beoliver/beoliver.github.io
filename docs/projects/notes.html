@@ -2,7 +2,62 @@
 <html>
 <head>
   <meta charset="utf-8"/>
-  <title>Marked in the browser</title>
+  <title>A Note</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    #content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      color: #333;
+    }
+    p {
+      line-height: 1.6;
+      color: #666;
+    }
+    a {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    pre {
+      background-color: #f5f5f5;
+      padding: 10px;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+    code {
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #f5f5f5;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+    blockquote {
+      border-left: 4px solid #ccc;
+      padding-left: 16px;
+      margin-left: 0;
+      color: #666;
+    }
+    ul, ol {
+      margin: 20px 0;
+      padding-left: 40px;
+    }
+    li {
+      margin: 10px 0;
+    }
+  </style>
 </head>
 <body>
   <div id="content"></div>
@@ -15,7 +70,7 @@
           throw new Error('Network response was not ok');
         }
         const text = await response.text();
-        document.getElementById('content').innerHTML = marked.parse(text);
+        document.getElementById('content').innerHTML = marked.parse(text, {breaks: true});
       } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
         document.getElementById('content').innerHTML = 'Failed to load content';
@@ -29,7 +84,7 @@
       const fullUrl = `https://raw.githubusercontent.com/beoliver/notes/master/${path}`;
       fetchMarkdown(fullUrl);
     } else {
-      document.getElementById('content').innerHTML = 'No path parameter provided - try "clojure/001.md"';
+      document.getElementById('content').innerHTML = 'No path parameter provided';
     }
   </script>
 </body>
