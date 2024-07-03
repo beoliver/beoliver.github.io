@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Marked in the browser</title>
+</head>
+<body>
+  <div id="content"></div>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    async function fetchMarkdown(url) {
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const text = await response.text();
+        document.getElementById('content').innerHTML = marked.parse(text);
+      } catch (error) {
+        console.error('There was a problem with the fetch operation:', error);
+        document.getElementById('content').innerHTML = 'Failed to load content';
+      }
+    }
+
+    const params = new URLSearchParams(document.location.search);
+    const path = params.get('path');
+    
+    if (path) {
+      const fullUrl = `https://raw.githubusercontent.com/beoliver/notes/master/${path}`;
+      fetchMarkdown(fullUrl);
+    } else {
+      document.getElementById('content').innerHTML = 'No path parameter provided - try "clojure/001.md"';
+    }
+  </script>
+</body>
+</html>
