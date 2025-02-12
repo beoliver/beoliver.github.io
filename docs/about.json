@@ -1,14 +1,20 @@
 {
   "fullname": "Benjamin Edward Oliver",
-  "considers_self": "Designer/Developer",
+  "considers_self": "Somewhere beween a PM, Designer, and Engineer",
   "location": {
     "current": "Oslo"
   },
   "employment": [
     {
       "company": "Ardoq AS",
+      "role": "Tech Lead / Engineering Manager",
+      "from": "2024"
+    },
+    {
+      "company": "Ardoq AS",
       "role": "Senior Software Engineer",
-      "from": "2023"
+      "from": "2023",
+      "to": "2024"
     },
     {
       "company": "Ardoq AS",
